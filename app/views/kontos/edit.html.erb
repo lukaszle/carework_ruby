@@ -1,6 +1,5 @@
-<h1>Editing konto</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @konto %> |
-<%= link_to 'Back', kontos_path %>
+<%- model_class = Konto -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Konto %></h1>
+</div>
+<%= render :partial => 'form' %>

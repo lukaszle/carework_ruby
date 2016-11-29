@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Konto -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Konto %></h1>
+</div>
 
-<p>
-  <strong>Id:</strong>
-  <%= @konto.id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:id) %></dt>
+      <dd><pre class="prettyprint"><%= @konto.id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:konto) %></dt>
+      <dd><pre class="prettyprint"><%= @konto.konto %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Konto:</strong>
-  <%= @konto.konto %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              kontos_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_konto_path(@konto), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              konto_path(@konto),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Klient:</strong>
-  <%= @konto.klient %>
-</p>
-
-<%= link_to 'Edit', edit_konto_path(@konto) %> |
-<%= link_to 'Back', kontos_path %>
