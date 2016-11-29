@@ -1,6 +1,5 @@
-<h1>Editing klient</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @klient %> |
-<%= link_to 'Back', klients_path %>
+<%- model_class = Klient -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Klient %></h1>
+</div>
+<%= render :partial => 'form' %>

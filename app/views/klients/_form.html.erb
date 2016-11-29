@@ -1,37 +1,40 @@
-<%= form_for(@klient) do |f| %>
-  <% if @klient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@klient.errors.count, "error") %> prohibited this klient from being saved:</h2>
-
-      <ul>
-      <% @klient.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @klient, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :imie, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :imie, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nazwisko, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :nazwisko, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :kid, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :kid, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :blad, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :blad, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :id, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :imie %><br>
-    <%= f.text_field :imie %>
-  </div>
-  <div class="field">
-    <%= f.label :nazwisko %><br>
-    <%= f.text_field :nazwisko %>
-  </div>
-  <div class="field">
-    <%= f.label :kid %><br>
-    <%= f.text_field :kid %>
-  </div>
-  <div class="field">
-    <%= f.label :blad %><br>
-    <%= f.check_box :blad %>
-  </div>
-  <div class="field">
-    <%= f.label :id %><br>
-    <%= f.number_field :id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  klients_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

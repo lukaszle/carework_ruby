@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Klient -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Klient %></h1>
+</div>
 
-<p>
-  <strong>Imie:</strong>
-  <%= @klient.imie %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:imie) %></dt>
+      <dd><pre class="prettyprint"><%= @klient.imie %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:nazwisko) %></dt>
+      <dd><pre class="prettyprint"><%= @klient.nazwisko %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:kid) %></dt>
+      <dd><pre class="prettyprint"><%= @klient.kid %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:blad) %></dt>
+      <dd><pre class="prettyprint"><%= @klient.blad %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:id) %></dt>
+      <dd><pre class="prettyprint"><%= @klient.id %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Nazwisko:</strong>
-  <%= @klient.nazwisko %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              klients_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_klient_path(@klient), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              klient_path(@klient),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Kid:</strong>
-  <%= @klient.kid %>
-</p>
-
-<p>
-  <strong>Blad:</strong>
-  <%= @klient.blad %>
-</p>
-
-<p>
-  <strong>Id:</strong>
-  <%= @klient.id %>
-</p>
-
-<%= link_to 'Edit', edit_klient_path(@klient) %> |
-<%= link_to 'Back', klients_path %>
