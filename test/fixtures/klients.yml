@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imie: MyString
+  nazwisko: MyString
+  kid: MyString
+  blad: false
+  id: 1
+
+two:
+  imie: MyString
+  nazwisko: MyString
+  kid: MyString
+  blad: false
+  id: 1
