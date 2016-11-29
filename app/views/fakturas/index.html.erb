@@ -1,0 +1,33 @@
+<h1>Listing fakturas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tytul</th>
+      <th>Data</th>
+      <th>Wyslana</th>
+      <th>Klient</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fakturas.each do |faktura| %>
+      <tr>
+        <td><%= faktura.id %></td>
+        <td><%= faktura.tytul %></td>
+        <td><%= faktura.data %></td>
+        <td><%= faktura.wyslana %></td>
+        <td><%= faktura.klient %></td>
+        <td><%= link_to 'Show', faktura %></td>
+        <td><%= link_to 'Edit', edit_faktura_path(faktura) %></td>
+        <td><%= link_to 'Destroy', faktura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Faktura', new_faktura_path %>

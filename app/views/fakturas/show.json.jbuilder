@@ -1,0 +1,1 @@
+json.partial! "fakturas/faktura", faktura: @faktura

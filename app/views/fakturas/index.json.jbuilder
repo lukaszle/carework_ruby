@@ -1,0 +1,1 @@
+json.array! @fakturas, partial: 'fakturas/faktura', as: :faktura

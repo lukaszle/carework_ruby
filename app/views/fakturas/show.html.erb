@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @faktura.id %>
+</p>
+
+<p>
+  <strong>Tytul:</strong>
+  <%= @faktura.tytul %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @faktura.data %>
+</p>
+
+<p>
+  <strong>Wyslana:</strong>
+  <%= @faktura.wyslana %>
+</p>
+
+<p>
+  <strong>Klient:</strong>
+  <%= @faktura.klient %>
+</p>
+
+<%= link_to 'Edit', edit_faktura_path(@faktura) %> |
+<%= link_to 'Back', fakturas_path %>
