@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'faktury/index'
+
   resources :klients
 
   resources :kontos
