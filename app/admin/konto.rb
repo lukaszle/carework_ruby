@@ -1,4 +1,5 @@
 ActiveAdmin.register Konto do
+  permit_params :id, :konto
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
