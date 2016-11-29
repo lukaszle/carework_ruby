@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Faktura -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Faktura %></h1>
+</div>
 
-<p>
-  <strong>Id:</strong>
-  <%= @faktura.id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:id) %></dt>
+      <dd><pre class="prettyprint"><%= @faktura.id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tytul) %></dt>
+      <dd><pre class="prettyprint"><%= @faktura.tytul %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:data) %></dt>
+      <dd><pre class="prettyprint"><%= @faktura.data %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:wyslana) %></dt>
+      <dd><pre class="prettyprint"><%= @faktura.wyslana %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Tytul:</strong>
-  <%= @faktura.tytul %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              fakturas_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_faktura_path(@faktura), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              faktura_path(@faktura),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Data:</strong>
-  <%= @faktura.data %>
-</p>
-
-<p>
-  <strong>Wyslana:</strong>
-  <%= @faktura.wyslana %>
-</p>
-
-<p>
-  <strong>Klient:</strong>
-  <%= @faktura.klient %>
-</p>
-
-<%= link_to 'Edit', edit_faktura_path(@faktura) %> |
-<%= link_to 'Back', fakturas_path %>
