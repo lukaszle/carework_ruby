@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  tytul: MyString
+  data: 2016-11-29
+  wyslana: false
+  klient_id: 
+
+two:
+  id: 1
+  tytul: MyString
+  data: 2016-11-29
+  wyslana: false
+  klient_id: 
