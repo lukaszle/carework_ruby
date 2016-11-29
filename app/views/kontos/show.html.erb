@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @konto.id %>
+</p>
+
+<p>
+  <strong>Konto:</strong>
+  <%= @konto.konto %>
+</p>
+
+<p>
+  <strong>Klient:</strong>
+  <%= @konto.klient %>
+</p>
+
+<%= link_to 'Edit', edit_konto_path(@konto) %> |
+<%= link_to 'Back', kontos_path %>

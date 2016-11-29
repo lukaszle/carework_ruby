@@ -1,0 +1,1 @@
+json.array! @kontos, partial: 'kontos/konto', as: :konto
